@@ -45,18 +45,6 @@ module Yadokari
       EOS
     end
 
-    desc 'hoge', 'hogehoge'
-    def hoge
-      reserve = Yadokari::Reserve.new
-      reserve.check_in_on = Date.new(2018, 3, 3)
-      reserve.check_out_on = Date.new(2018, 3, 4)
-      reserve.name = 'sakape'
-      reserve.email = 'sakape@example.com'
-      reserve.mens_number = '3'
-      reserve.womens_number = '2'
-      pp reserve.post
-    end
-
     private
 
     def yado_id(yado)
