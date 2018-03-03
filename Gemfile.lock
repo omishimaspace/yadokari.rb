@@ -3,12 +3,16 @@ PATH
   specs:
     yadokari (0.1.0)
       thor
+      xcal
 
 GEM
   remote: https://rubygems.org/
   specs:
+    icalendar (2.4.1)
     rake (10.5.0)
     thor (0.20.0)
+    xcal (2.1.0)
+      icalendar (~> 2)
 
 PLATFORMS
   ruby
