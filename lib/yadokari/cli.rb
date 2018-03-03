@@ -1,6 +1,7 @@
 require 'thor'
 require 'xcal'
 require 'yadokari/reservation'
+require 'yadokari/me'
 
 module Yadokari
   class CLI < Thor
@@ -34,15 +35,8 @@ module Yadokari
 
     desc 'me TOKEN', 'show your reservation'
     def me(token)
-      puts <<-'EOS'
-*** YOUR INFOMATION ***
-1. check in date: 2018/07/07
-2. check out date: 2018/07/09
-3. your name: mishima
-4. email address: mishima@example.com
-5. how many people: 5
-**********************
-      EOS
+      me = Yadokari::Me.new(token)
+      me.run
     end
 
     private
