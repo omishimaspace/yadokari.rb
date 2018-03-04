@@ -3,6 +3,7 @@ require 'xcal'
 require 'yadokari/reservation'
 require 'yadokari/me'
 require 'yadokari/yado'
+require 'yadokari/schedule'
 
 module Yadokari
   class CLI < Thor
@@ -28,7 +29,10 @@ module Yadokari
 
     desc 'cal YADO', 'show yado calendar'
     def cal(yado)
-      Xcal::Xcal.new.main([''])
+      schedules = Yadokari::Schedule.new(yado_id(yado)).list
+      schedules.each do |schedule|
+        puts "#{schedule['started_on']} ~ #{schedule['finished_on']} #{schedule['schedule']}"
+      end
     end
 
     desc 'reserve YADO', 'reserve yado'
