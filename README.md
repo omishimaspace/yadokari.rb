@@ -22,7 +22,15 @@ Or install it yourself as:
 
 ## Usage
 
-Write usage instructions here
+```
+Commands:
+  yadokari cal YADO        # show yado calendar
+  yadokari help [COMMAND]  # Describe available commands or one specific command
+  yadokari list            # list yahos
+  yadokari me TOKEN        # show your reservation
+  yadokari reserve YADO    # reserve yado
+  yadokari show YADO       # show yado infomation
+```
 
 ## Development
 
