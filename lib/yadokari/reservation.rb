@@ -22,7 +22,7 @@ module Yadokari
 
       # TODO: confirmation
 
-      result = reserve.post
+      result = reserve.post(@yad_id)
       puts <<-EOS
 *** YOUR TOKEN ***
 #{result['token']}
@@ -33,8 +33,8 @@ module Yadokari
   class Reserve < OpenStruct
     include Yadokari::Api
 
-    def post
-      do_post('/yados/1/reservations', params)
+    def post(yado_id)
+      do_post("/yados/#{yado_id}/reservations", params)
     end
 
     private
