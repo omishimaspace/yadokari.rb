@@ -15,3 +15,11 @@ describe 'Reserve' do
   end
 end
 
+describe 'Yado' do
+  it '宿一覧' do
+    yado = Yadokari::Yado.new
+    yado = yado.list.first
+    expect(yado['name']).to eq 'オオミシマスペース'
+    expect(yado['short_name']).to eq 'os'
+  end
+end

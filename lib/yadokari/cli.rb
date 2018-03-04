@@ -2,13 +2,17 @@ require 'thor'
 require 'xcal'
 require 'yadokari/reservation'
 require 'yadokari/me'
+require 'yadokari/yado'
 
 module Yadokari
   class CLI < Thor
 
     desc 'list', 'list yahos'
     def list
-      puts '1. omishima-space'
+      yado = Yadokari::Yado.new
+      yado.list.each do |yado|
+        puts "#{yado['id']}. #{yado['name']}"
+      end
     end
 
     desc 'show YADO', 'show yado infomation'
