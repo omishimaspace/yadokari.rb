@@ -8,7 +8,7 @@ require 'yadokari/schedule'
 module Yadokari
   class CLI < Thor
 
-    desc 'list', 'list yahos'
+    desc 'list', 'list yados'
     def list
       yado = Yadokari::Yado.new
       yado.list.each do |yado|

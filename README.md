@@ -26,7 +26,7 @@ Or install it yourself as:
 Commands:
   yadokari cal YADO        # show yado calendar
   yadokari help [COMMAND]  # Describe available commands or one specific command
-  yadokari list            # list yahos
+  yadokari list            # list yados
   yadokari me TOKEN        # show your reservation
   yadokari reserve YADO    # reserve yado
   yadokari show YADO       # show yado infomation
