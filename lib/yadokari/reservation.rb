@@ -19,10 +19,15 @@ module Yadokari
       reserve.tel = cli.ask('tel:')
       reserve.men_number = cli.ask('how many man?:')
       reserve.women_number = cli.ask('how many women?:')
+      reserve.check_in_time = cli.ask('check in time:')
+      reserve.purpose_of_use = cli.ask('purpose of use:')
+      reserve.payment_method = cli.ask('payment method:')
+      reserve.coupon = cli.ask('coupon:')
+      reserve.note = cli.ask('note:')
 
       # TODO: confirmation
 
-      result = reserve.post(@yad_id)
+      result = reserve.post(@yado_id)
       puts <<-EOS
 *** YOUR TOKEN ***
 #{result['token']}

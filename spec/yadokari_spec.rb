@@ -11,6 +11,11 @@ describe 'Reserve' do
     reserve.tel = '09012341234'
     reserve.men_number = '3'
     reserve.women_number = '2'
+    reserve.check_in_time = '15:00'
+    reserve.purpose_of_use = '開発合宿'
+    reserve.payment_method = 'card'
+    reserve.coupon = 'xxxxx'
+    reserve.note = 'よろしく！'
     expect(reserve.post(1)['token']).to_not be_nil
   end
 end
