@@ -25,7 +25,7 @@ module Yadokari
       reserve.coupon = cli.ask('coupon:')
       reserve.note = cli.ask('note:')
 
-      # TODO: confirmation
+      # FIXME: confirmation
 
       result = reserve.post(@yado_id)
       puts <<-EOS
