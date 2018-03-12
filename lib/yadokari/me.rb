@@ -10,7 +10,6 @@ module Yadokari
 
     def run
       result = do_get("/me/#{@token}")
-      puts result
       puts <<-EOS
 *** YOUR INFOMATION ***
 check in date: #{result['check_in_on']}
