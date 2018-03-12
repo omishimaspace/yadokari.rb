@@ -17,14 +17,14 @@ module Yadokari
     end
 
     desc 'show YADO', 'show yado infomation'
-    def show(yado)
-      yado_information = case yado
-                         when 'omishima-space'
-                           'https://omishima-space.com/'
-                         else
-                           'show nothing'
-                         end
-      puts yado_information
+    def show(yado_id)
+      yado = Yadokari::Yado.new
+      result = yado.show(yado_id)
+      puts <<-EOS
+name: #{result['name']}
+url: #{result['url']}
+note: #{result['note']}
+EOS
     end
 
     desc 'cal YADO', 'show yado calendar'
@@ -49,8 +49,10 @@ module Yadokari
 
     private
 
-    def yado_id(yado)
-      1
+    def yado_id(id)
+      yado = Yadokari::Yado.new
+      result = yado.show(id)
+      result['id']
     end
   end
 end

@@ -13,7 +13,12 @@ module Yadokari
 
     def do_get(path)
       res = client.get entry_path(path)
-      JSON.parse res.body
+      if res.status == 200
+        JSON.parse res.body
+      else
+        puts 'not found'
+        exit(1)
+      end
     end
 
     private
